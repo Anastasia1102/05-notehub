@@ -4,7 +4,7 @@ import css from "./NoteList.module.css";
 import { deleteNote } from "../../services/noteService";
 
 interface NoteListProps {
-  notes?: Note[];
+  notes: Note[];
 }
 
 export default function NoteList({ notes }: NoteListProps) {
