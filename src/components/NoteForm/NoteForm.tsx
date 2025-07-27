@@ -3,7 +3,7 @@ import * as Yup from "yup";
 import css from "./NoteForm.module.css";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { createNote } from "../../services/noteService";
-import type { NewNoteData } from "../../types/note";
+import type { Note } from "../../types/note";
 
 interface NoteFormProps {
   onSuccess: () => void;
@@ -34,7 +34,7 @@ export default function NoteForm({ onSuccess, onCancel }: NoteFormProps) {
       initialValues={{ title: "", content: "", tag: "Todo" }}
       validationSchema={validationSchema}
       onSubmit={(values, { resetForm }) => {
-        mutation.mutate(values as NewNoteData);
+        mutation.mutate(values as Note);
         resetForm();
       }}
     >
